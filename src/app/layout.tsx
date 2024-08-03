@@ -1,11 +1,10 @@
-import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { cn } from "@/lib/utils";
-import { IBM_Plex_Sans_Arabic as font } from "next/font/google";
+import { Space_Grotesk as font } from "next/font/google";
 import "./globals.css";
 
 const fontused = font({
-  subsets: ["latin", "arabic"],
+  subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
 
@@ -31,14 +30,14 @@ export default function RootLayout({
       <body
         className={cn(
           fontused.className,
-          "flex flex-col justify-between items-center min-h-screen "
+          "flex flex-col select-none justify-between items-center min-h-screen "
         )}
       >
         <Navbar />
         <main className="flex justify-center items-center text-center w-screen">
           {children}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

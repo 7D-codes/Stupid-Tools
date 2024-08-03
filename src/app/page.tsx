@@ -1,86 +1,59 @@
+import StupidToolCard from "@/components/toolBlock";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { ThumbsUp } from "lucide-react";
-import Image from "next/image";
-import { tools } from "./data";
+import { GithubIcon } from "lucide-react";
+import { tools } from "../lib";
 
 const LandingPage = () => {
+  // Randomly select a featured tool
+  const featuredTool = tools[Math.floor(Math.random() * tools.length)];
+
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900 p-4 sm:p-8">
-      <header className="text-center mb-8 sm:mb-12">
-        <h1 className="text-4xl sm:text-6xl font-bold mb-2 sm:mb-4 text-gray-800">
-          UselessTools
+    <div className="min-h-screen text-foreground p-4 sm:p-8 relative">
+      <div className="absolute inset-0 opacity0 -z-50 pointer-events-none" />
+
+      <header className="text-center mb-12 mt-24 sm:mb-16">
+        <div className="flex justify-between mb-8 text-muted-foreground"></div>
+        <h1 className="text-5xl sm:text-7xl font-bold mb-2 text-foreground">
+          Stupid Tools
         </h1>
-        <p className="text-lg sm:text-xl text-gray-600">
-          Welcome to the home of delightfully useless web tools!
+        <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto">
+          I made this site to make some use of my own time by learning web dev
+          more
         </p>
+        <div className="mt-8 gap-2 flex justify-center space-x-4">
+          <a href="https://github.com">
+            <Button variant="outline" className="flex gap-2">
+              <GithubIcon width={20} />
+              View Source
+            </Button>
+          </a>
+          <Button>Submit Idea</Button>
+        </div>
       </header>
 
       <main className="max-w-7xl mx-auto">
-        <Card className="mb-8 sm:mb-12">
-          <CardHeader>
-            <CardTitle className="text-2xl sm:text-3xl font-semibold">
-              About UselessTools
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm sm:text-base text-gray-700">
-              UselessTools is your hub for quirky, fun, and utterly pointless
-              web applications. Dive in and waste time in the most entertaining
-              way possible!
-            </p>
-          </CardContent>
-        </Card>
-
+        <section className="mb-16">
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-center text-foreground">
+            Featured Tool
+          </h2>
+          <StupidToolCard tool={featuredTool} />
+        </section>
         <section>
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8 text-center text-gray-800">
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-8 text-center text-foreground">
             Our Useless Wonders
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {tools.map((tool, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden hover:shadow-lg transition-shadow duration-300"
-              >
-                <Image
-                  src={tool.image}
-                  alt={tool.name}
-                  width={200}
-                  height={300}
-                  className="w-full h-40 object-cover"
-                />
-                <CardHeader className="p-4">
-                  <CardTitle className="text-lg">{tool.name}</CardTitle>
-                </CardHeader>
-                <CardContent className="p-4 pt-0">
-                  <p className="text-sm text-gray-600">{tool.description}</p>
-                </CardContent>
-                <CardFooter className="p-4 flex justify-between items-center">
-                  <a href={tool.url}>
-                    <Button variant="outline" size="sm">
-                      Try it
-                    </Button>
-                  </a>
-                  <Button variant="ghost" size="sm">
-                    <ThumbsUp className="h-4 w-4 mr-2" />
-                    Upvote
-                  </Button>
-                </CardFooter>
-              </Card>
+              <StupidToolCard key={index} tool={tool} />
             ))}
           </div>
         </section>
       </main>
 
-      <footer className="mt-12 sm:mt-16 text-center text-gray-600">
+      <footer className="mt-16 sm:mt-24 text-center text-muted-foreground">
         <p>&copy; 2024 UselessTools. All rights pointlessly reserved.</p>
       </footer>
+      {/* Side navigation */}
     </div>
   );
 };
