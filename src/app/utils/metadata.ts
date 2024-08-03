@@ -1,4 +1,4 @@
-import { tools } from "../data";
+import { tools } from "../../lib";
 
 export const getToolMetadata = (toolUrl: string) => {
   const tool = tools.find((tool) => tool.url === toolUrl);
