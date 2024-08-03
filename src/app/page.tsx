@@ -5,7 +5,7 @@ import { tools } from "../lib";
 
 const LandingPage = () => {
   // Randomly select a featured tool
-  const featuredTool = tools[Math.floor(Math.random() * tools.length)];
+  const randomTool = tools[Math.floor(Math.random() * tools.length)];
 
   return (
     <div className="min-h-screen text-foreground p-4 sm:p-8 relative">
@@ -27,20 +27,22 @@ const LandingPage = () => {
               View Source
             </Button>
           </a>
-          <Button>Submit Idea</Button>
+          <a href="mailto:miuatoro.exe?subject=Stupid%20Tool%20Idea&body=so%20I%20have%20this%20idea...">
+            <Button>Submit Idea</Button>
+          </a>
         </div>
       </header>
 
       <main className="max-w-7xl mx-auto">
         <section className="mb-16">
           <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-center text-foreground">
-            Featured Tool
+            Random Tool
           </h2>
-          <StupidToolCard tool={featuredTool} />
+          <StupidToolCard tool={randomTool} />
         </section>
         <section>
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-8 text-center text-foreground">
-            Our Useless Wonders
+          <h2 className="text-2xl sm:text-4xl font-semibold mb-8 text-center text-foreground">
+            Hopefully they are helpful 😸
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {tools.map((tool, index) => (
@@ -50,8 +52,8 @@ const LandingPage = () => {
         </section>
       </main>
 
-      <footer className="mt-16 sm:mt-24 text-center text-muted-foreground">
-        <p>&copy; 2024 UselessTools. All rights pointlessly reserved.</p>
+      <footer className="mt-16 sm:mt-24 text-center text-sm text-muted-foreground">
+        <p>&copy; 2024 Stupid Tools. or something like that idk.</p>
       </footer>
       {/* Side navigation */}
     </div>

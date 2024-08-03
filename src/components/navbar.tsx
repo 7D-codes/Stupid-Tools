@@ -36,14 +36,16 @@ const FloatingNavbar = () => {
             <TwitterIcon size={20} />
           </motion.a>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              className="bg-primary text-white rounded-full hover:bg-secondary hover:text-primary"
-              title="Submit Your Idea"
-              // onClick={}
-            >
-              <span className="hidden sm:inline px-2">Submit Your Idea</span>
-              <PlusIcon size={20} className="sm:hidden" />
-            </Button>
+            <a href="mailto:miuatoro.exe?subject=Stupid%20Tool%20Idea&body=so%20I%20have%20this%20idea...">
+              <Button
+                className="bg-primary text-white rounded-full hover:bg-secondary hover:text-primary"
+                title="Submit Your Idea"
+                // onClick={}
+              >
+                <span className="hidden sm:inline px-2">Submit Your Idea</span>
+                <PlusIcon size={20} className="sm:hidden" />
+              </Button>
+            </a>
           </motion.div>
         </div>
       </motion.div>

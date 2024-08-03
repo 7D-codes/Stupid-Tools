@@ -1,8 +1,12 @@
 import { Metadata } from "next";
+import { headers } from "next/headers";
+import React from "react";
 import { getToolMetadata } from "../utils/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metadata = getToolMetadata("/banana-metric");
+  const headerList = headers();
+  const pathname = headerList.get("x-current-path");
+  const metadata = getToolMetadata(`${pathname}`);
   return metadata;
 }
 
