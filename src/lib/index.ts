@@ -1,15 +1,15 @@
-import { BananaIcon, HelpCircle } from "lucide-react";
+import { HelpCircle, RulerIcon } from "lucide-react";
 
 export const tools = [
   {
-    name: "Banana Metric Converter",
-    description: "Convert normal distances to banana lengths",
+    name: "Unnecessary Unit Converter",
+    description: "Convert normal distances to very random lengths",
     image: "/api/placeholder/200/200",
-    url: "/banana-metric",
-    icon: BananaIcon,
+    url: "/unnecessary-unit",
+    icon: RulerIcon,
     metadata: {
-      title: "Banana Metric Converter - UselessTools",
-      description: "Measure distances in the most appealing unit: bananas!",
+      title: "Unnecessary Unit Converter - UselessTools",
+      description: "Measure distances in the most appealing units!",
     },
   },
   {
