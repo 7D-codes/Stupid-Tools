@@ -21,7 +21,7 @@ const LandingPage = () => {
           more
         </p>
         <div className="mt-8 gap-2 flex justify-center space-x-4">
-          <a href="https://github.com">
+          <a href="https://github.com/7D-codes/Stupid-Tools">
             <Button variant="outline" className="flex gap-2">
               <GithubIcon width={20} />
               View Source
