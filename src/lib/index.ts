@@ -1,10 +1,10 @@
-import { HelpCircle, RulerIcon } from "lucide-react";
+import { BookOpen, HelpCircle, RulerIcon } from "lucide-react";
 
 export const tools = [
   {
     name: "Unnecessary Unit Converter",
     description: "Convert normal distances to very random lengths",
-    image: "/api/placeholder/200/200",
+    // image: "/api/placeholder/200/200",
     url: "/unnecessary-unit",
     icon: RulerIcon,
     metadata: {
@@ -15,13 +15,24 @@ export const tools = [
   {
     name: "Pointless Poll Creator",
     description: "Generate 'Would You Rather' polls with nonsensical options",
-    image: "/api/placeholder/200/200",
+    // image: "/api/placeholder/200/200",
     url: "/pointless-poll",
     icon: HelpCircle,
     metadata: {
       title: "Pointless Poll Creator - UselessTools",
       description:
         "Create absurd 'Would You Rather' polls that no one asked for!",
+    },
+  },
+  {
+    name: "Overexplainer 3000",
+    description: "Generate absurdly complex explanations for simple concepts",
+    // image: "/api/placeholder/200/200",
+    url: "/over-explainer",
+    icon: BookOpen,
+    metadata: {
+      title: "Overexplainer 3000 - UselessTools",
+      description: "Turn simple ideas into incomprehensible jargon!",
     },
   },
 ];
