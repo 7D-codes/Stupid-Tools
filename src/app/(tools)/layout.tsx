@@ -12,10 +12,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex items-center justify-center pb-20">
-      <div className="w-full max-w-lg p-4 relative justify-center items-center h-[300px]">
-        {children}
-      </div>
+    <div className="min-h-screen w-full flex items-center justify-center pb-28">
+      <div className="w-full  max-w-lg relative px-4 h-[400px]">{children}</div>
     </div>
   );
 }

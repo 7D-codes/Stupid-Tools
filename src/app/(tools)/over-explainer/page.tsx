@@ -30,12 +30,12 @@ const Overexplainer3000: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("/api/generate-explanation", {
+      const response = await fetch("/api/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ input: input.trim() }),
+        body: JSON.stringify({ tool: "overexplainer", input: input.trim() }),
       });
 
       if (!response.ok) {
@@ -44,7 +44,7 @@ const Overexplainer3000: React.FC = () => {
       }
 
       const data = await response.json();
-      setExplanation(data.explanation);
+      setExplanation(data.content);
     } catch (error) {
       console.error("Failed to generate explanation:", error);
       setError(
@@ -66,7 +66,7 @@ const Overexplainer3000: React.FC = () => {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto">
+    <Card className="">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <BookOpen className="h-6 w-6" />
