@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { LucideIcon, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import React from "react";
 
 interface ToolMetadata {
@@ -17,10 +17,10 @@ interface ToolMetadata {
 interface Tool {
   name: string;
   description: string;
-  image: string;
+  // image: string;
   url: string;
-  icon: LucideIcon;
-  metadata: ToolMetadata;
+  icon: string;
+  // metadata: ToolMetadata;
 }
 
 interface StupidToolCardProps {
@@ -42,10 +42,9 @@ const StupidToolCard: React.FC<StupidToolCardProps> = ({ tool }) => (
       </div> */}
     </div>
     <CardHeader className="p-2">
-      <CardTitle className="text-lg flex flex-row gap-2">
-        {" "}
-        <tool.icon className="h-6 w-6 text-primary" />
+      <CardTitle className="text-lg gap-2 flex flex-row">
         {tool.name}
+        <p className="text-xl">{tool.icon}</p>
       </CardTitle>
     </CardHeader>
     <CardContent className="p-2 pt-0">

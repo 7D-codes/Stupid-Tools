@@ -12,23 +12,24 @@ const fontused = font({
 });
 
 export const metadata: Metadata = {
-  title: "UselessTools",
+  metadataBase: new URL("https://stupid-tools.vercel.app"),
+  title: "Stupid Tools",
   description:
-    "Discover a collection of quirky and fun online tools like Coin Flipper, Virtual Pet Rock, Fortune Cookie Generator, Mood Ring Simulator, Random Compliment Generator, and the World's Slowest Website. Explore and enjoy our useless tools!",
+    "Discover a collection of Stupid and fun online tools. Explore and enjoy our Stupid yet Useless tools!",
   keywords:
-    "useless tools, quirky tools, fun online tools, Coin Flipper, Virtual Pet Rock, Fortune Cookie Generator, Mood Ring Simulator, Random Compliment Generator, World's Slowest Website",
+    "useless tools, quirky tools, fun online tools, I'm bored, Stupid Tools,",
   robots: "index, follow",
   openGraph: {
-    title: "UselessTools",
+    title: "Stupid Tools",
     description: "Discover a collection of quirky and fun online tools",
     url: "https://stupid-tools.vercel.app",
-    siteName: "UselessTools",
+    siteName: "Stupid Tools",
     images: [
       {
         url: "/homepage.jpg",
         width: 1200,
         height: 630,
-        alt: "UselessTools Homepage",
+        alt: "Stupid Tools Homepage",
       },
     ],
     locale: "en_US",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UselessTools",
+    title: "Stupid Tools",
     description: "Discover a collection of quirky and fun online tools",
     images: ["/homepage.jpg"],
   },
